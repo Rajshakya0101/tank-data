@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "227538036456",
+    "firebase_url": "https://hydroponic-bd230-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "hydroponic-bd230",
+    "storage_bucket": "hydroponic-bd230.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:227538036456:android:18b913d933e20552630b5d",
+        "android_client_info": {
+          "package_name": "com.example.thermowatch"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFWCIhw1GVDEkHCTKZ5S-HPFzo1mPSM38"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:227538036456:android:74aef228b0b8df1f630b5d",
+        "android_client_info": {
+          "package_name": "tank.data"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFWCIhw1GVDEkHCTKZ5S-HPFzo1mPSM38"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
