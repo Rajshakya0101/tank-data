@@ -1,7 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'screens/home.dart';
+import 'package:tankdata/screens/home_new.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 // Firebase configuration for web
 const firebaseOptions = FirebaseOptions(
@@ -39,67 +40,24 @@ void main() async {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // Define custom themes
+    // Define a **light-only** theme using GoogleFonts.sulphurPointTextTheme
     final ThemeData lightTheme = ThemeData(
+      brightness: Brightness.light,
       primarySwatch: Colors.teal,
       scaffoldBackgroundColor: Colors.grey[100],
       cardColor: Colors.white,
+      // Set the default text theme to use Sulphur Point
+      textTheme: GoogleFonts.sulphurPointTextTheme(
+        ThemeData.light().textTheme,
+      ),
       appBarTheme: AppBarTheme(
         backgroundColor: Colors.teal,
         elevation: 0,
         centerTitle: true,
-        titleTextStyle: TextStyle(
+        titleTextStyle: GoogleFonts.sulphurPoint(
           fontSize: 24,
           fontWeight: FontWeight.bold,
           color: Colors.white,
-        ),
-      ),
-      textTheme: TextTheme(
-        headlineMedium: TextStyle(
-          fontSize: 48,
-          fontWeight: FontWeight.bold,
-          color: Colors.teal[800],
-        ),
-        titleLarge: TextStyle(
-          fontSize: 20,
-          fontWeight: FontWeight.w600,
-          color: Colors.teal[700],
-        ),
-        bodyMedium: TextStyle(
-          fontSize: 16,
-          color: Colors.grey[800],
-        ),
-      ),
-    );
-
-    final ThemeData darkTheme = ThemeData.dark().copyWith(
-      primaryColor: Colors.teal,
-      scaffoldBackgroundColor: Colors.grey[900],
-      cardColor: Colors.grey[800],
-      appBarTheme: AppBarTheme(
-        backgroundColor: Colors.teal[700],
-        elevation: 0,
-        centerTitle: true,
-        titleTextStyle: TextStyle(
-          fontSize: 24,
-          fontWeight: FontWeight.bold,
-          color: Colors.white,
-        ),
-      ),
-      textTheme: TextTheme(
-        headlineMedium: TextStyle(
-          fontSize: 48,
-          fontWeight: FontWeight.bold,
-          color: Colors.teal[200],
-        ),
-        titleLarge: TextStyle(
-          fontSize: 20,
-          fontWeight: FontWeight.w600,
-          color: Colors.teal[100],
-        ),
-        bodyMedium: TextStyle(
-          fontSize: 16,
-          color: Colors.grey[300],
         ),
       ),
     );
@@ -107,13 +65,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Realtime Tank Data',
       debugShowCheckedModeBanner: false,
+      // Use our custom light theme
       theme: lightTheme,
-      darkTheme: darkTheme,
-      themeMode: ThemeMode.system,
-      home: HomeScreen(),
-      // Adding a default route transition for a smoother experience
+      // Force app into light mode only
+      themeMode: ThemeMode.light,
+      home: HomeScreenNew(),
+      // Route
       onGenerateRoute: (settings) {
-        return MaterialPageRoute(builder: (context) => HomeScreen());
+        return MaterialPageRoute(builder: (context) => HomeScreenNew());
       },
     );
   }
